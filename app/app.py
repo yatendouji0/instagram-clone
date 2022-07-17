@@ -249,7 +249,7 @@ def postupload():
         cur.execute(query.format(session['username'], session['pp'], postimg.filename, posttext))
         db.commit()
         cur.close()
-        postimg.save(os.getcwd().replace('\\','/') + '/static/postimg/' + postimg.filename)
+        postimg.save(os.getcwd().replace('\\','/') + '/app/static/postimg/' + postimg.filename)
         flash('Gönderiniz başarıyla yüklendi.','success')
         return redirect(url_for('index'))
 
