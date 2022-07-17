@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Register Page
+{% endblock title %}
+
+{% block body %}
+    <div class="container-350 mt-5 p-4 d-flex flex-column align-items-center border border-1">
+        <img src="https://www.instagram.com/static/images/web/logged_out_wordmark.png/7a252de00b20.png" class="mt-1 mb-2">
+        <p class="text-center container-250 mb-3 fw-bold text-muted">
+            Arkadaşlarının fotoğraf ve videolarını görmek için kaydol.
+        </p>
+        <a href="" class="btn btn-primary w-100 mb-2">
+            <i class="fa-brands fa-facebook-square fa-xl"></i> <span class="fw-bold ms-2">Facebook ile Giriş Yap</span>
+        </a>
+        <hr class="w-100">
+        <form action="/signup" method='POST' class="w-100 my-3">
+            <input type="email" name='email' placeholder='Eposta' class='form-control mb-2' required>
+            <input type="text" name="name" placeholder='Adı Soyadı' class='form-control mb-2' required>
+            <input type="text" name="username" placeholder='Kullanıcı adı' class='form-control mb-2' required>
+            <input type="password" name="password" placeholder='Şifre' class='form-control mb-2' required>
+            <p class="text-center fs-8 text-muted">
+                Hizmetimizi kullanan kişiler senin iletişim bilgilerini Instagram'a yüklemiş olabilir. <a href="#" class="text-decoration-none fw-bold">Daha Fazla Bilgi Al</a>
+            </p>
+            <p class="text-center fs-8 text-muted">
+                Kaydolarak, Koşullar'ı, Veri İlkesi'ni ve Çerezler İlkesi'ni kabul etmiş olursun.
+            </p>
+            <button type="submit" class="btn btn-primary w-100"><span class="fw-bold">Kaydol</span></button>
+        </form>
+    </div>
+    <div class="container-350 border border-1 px-5 py-3 mt-3 d-flex justify-content-center">
+        <span>Hesabın var mı?<a href="{{ url_for('login') }}" class="text-decoration-none ms-1 text-info" >Giriş yap</a></span>
+    </div>
+{% endblock body %}

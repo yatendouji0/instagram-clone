@@ -1,0 +1,55 @@
+{% extends 'profile.html' %}
+
+{% block modal %}
+<div class="modal fade" id="followModal" tabindex="-1" aria-labelledby="followModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header p-1">
+        <h5 class="modal-title ms-2" id="followModalLabel">{{title}}</h5>
+        <button type="button" class="btn-close m-0 me-2" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-0 rounded">
+        <ul class="list-group list-group-flush">
+            {% if lenfollow == 0 %}
+                <li class="list-group-item border-0 d-flex">
+                    <div class="row m-0 p-0 w-100 align-items-center">
+                        <p>Böyle bir bilgi yok.</p>
+                    </div>
+                </li>
+            {% endif %}
+            {% for follower in followers %}
+                <li class="list-group-item border-0 d-flex">
+                    <div class="row m-0 p-0 w-100 align-items-center">
+                        <div class="col-1 p-0">
+                            <img src="{{ url_for('static',filename='files/'+ follower['pp']) }}" style="width: 35px; height: 35px" class="rounded-pill">
+                        </div>
+                        <div class="col-8 p-0 ps-2">
+                            <p class="fw-semibold m-0">
+                                {{follower['username']}}
+                            </p>
+                            <p class=" m-0">
+                                {{follower['fullname']}}
+                            </p>
+                        </div>
+                        <div class="col-3">
+                            <a href="{{url_for('profile', username=follower['username'])}}" class="btn btn-outline-dark w-100">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<script> 
+    $(document).ready(function(e){
+        $('#followModal').modal("show")
+    })
+    $('#followModal').on('hidden.bs.modal', function () {
+        history.back()
+    })
+</script>
+{% endblock modal %}

@@ -1,0 +1,14 @@
+@import url('utils.css');
+
+
+/* Profile */
+.profile_post_card {
+    height: 300px;
+}
+
+.profile_post_card:hover div {
+    opacity: 0.8;
+}
+.profile_post_card img {
+    object-fit: cover;
+}

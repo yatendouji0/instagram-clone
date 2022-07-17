@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    {{session['username']}} &deg; Instagram
+{% endblock title %}
+
+{% block body %}
+    <div class="container-600 mt-5">
+        <form method='post' enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="postimg" class="form-label">Dosya Seçin</label>
+                <input type="file" name="postimg" id="postimg" class="form-control" required>
+            </div>
+            <div class="mb-4">
+                <label for="posttext" class="form-label">Bir açıklama yazın.</label>
+                <textarea name="posttext" id="posttext" cols="30" rows="5" class="form-control"></textarea>
+            </div>
+            <div class="mb-3 d-flex gap-3">
+                <a href="/" class="btn btn-danger flex-fill">
+                    Gönderiyi Sil
+                </a>
+                <button type="submit" class="btn btn-primary flex-fill">
+                    Gönderiyi Yükle
+                </button>
+            </div>
+        </form>
+    </div>
+{% endblock body %}

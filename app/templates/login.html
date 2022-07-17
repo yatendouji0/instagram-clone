@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Login Page
+{% endblock title %}
+
+{% block body %}
+    <div class="container-350 mt-5 p-4 d-flex flex-column align-items-center border border-1">
+        <img src="https://www.instagram.com/static/images/web/logged_out_wordmark.png/7a252de00b20.png" class="mt-1 mb-2">
+        <form action="/login" method='POST' class="w-100 my-3">
+            <input type="text" name='noe' placeholder='Eposta veya kullanıcı adı' class='form-control mb-2' required>
+            <input type="password" name="password" placeholder='Şifre' class='form-control mb-2' required>
+            <button type="submit" class="btn btn-primary w-100 mt-2"><span class="fw-bold">Giriş Yap</span></button>
+        </form>
+        <hr class="w-100">
+        <a href="#" class="fs-7 text-decoration-none mb-3">
+            <i class="fa-brands fa-facebook-square fa-xl"></i> <span class="fw-bold ms-2">Facebook ile Giriş Yap</span>
+        </a>
+        <a href="#" class="fs-8 text-decoration-none text-black">
+            Şifreni mi unuttun?
+        </a>
+    </div>
+    <div class="container-350 border border-1 px-5 py-3 mt-3 d-flex justify-content-center">
+        <span>Hesabın yok mu?<a href="{{ url_for('signup') }}" class="text-decoration-none ms-1 text-info" >Kaydol</a></span>
+    </div>
+{% endblock body %}

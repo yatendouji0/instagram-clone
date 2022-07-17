@@ -1,0 +1,80 @@
+<nav class="navbar navbar-expand navbar-light border border-bottom-1 fixed-top bg-white" style='z-index: 5'>
+    <div class="row container-960">
+        <div class="col-4">
+            <a href="/" class="navbar-brand">
+                <img src="https://www.instagram.com/static/images/web/logged_out_wordmark.png/7a252de00b20.png" height="34px">
+            </a>
+        </div>
+        <div class="col-4">
+            <form action="/search" method='POST'>
+                <div class="input-group">
+                    <input type="text" name="search" class="form-control bg-light" placeholder="Ara">                
+                    <button class="btn btn-primary">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="col-4 d-flex justify-content-end">
+            <ul class="navbar-nav align-items-center">
+                <li class="nav-item mx-1">
+                    <a href="/" class="nav-link">
+                        <i class="fa-solid fa-house fa-xl"></i>
+                    </a>
+                </li>
+                <li class="nav-item mx-1">
+                    <a href="/" class="nav-link">
+                        <i class="fa-brands fa-facebook-messenger fa-xl"></i>
+                    </a>
+                </li>
+                <li class="nav-item mx-1">
+                    <a href="{{url_for('postupload')}}" class="nav-link">
+                        <i class="fa-solid fa-square-plus fa-xl"></i>
+                    </a>
+                </li>
+                <li class="nav-item mx-1">
+                    <a href="/" class="nav-link">
+                       <i class="fa-solid fa-heart fa-xl"></i>
+                    </a>
+                </li>
+                <li class="nav-item mx-1 dropdown">
+                    <a href="#" class="nav-link overflow-hidden p-0 rounded-pill" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="{{ url_for('static',filename='files/'+session['pp']) }}" style="width: 30px; height: 30px">
+                    </a>
+                    <ul class="dropdown-menu p-0 pb-1" aria-labelledby="dropdownMenuLink">
+                        <li>
+                            <a class="dropdown-item" href="{{url_for('profile', username = session['username'] )}}">
+                                <i class="fa-solid fa-user"></i>
+                                <span class="ms-2">Profil</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="fa-solid fa-bookmark"></i>
+                                <span class="ms-2">Kaydedildi</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="fa-solid fa-gear"></i>
+                                <span class="ms-2">Ayarlar</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="fa-solid fa-arrow-rotate-right"></i>
+                                <span class="ms-2">Hesap Değiştir</span>
+                            </a>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <a class="dropdown-item" href="/logout">
+                                <span class="ms-2">Çıkış Yap</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

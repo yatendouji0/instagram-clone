@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    {{searchTitle}} &deg; Instagram
+{% endblock title %}
+
+{% block body %}
+    <div class="container-960">
+        <ul class="list-group list-group-flush">
+            {% for data in userdatas %}
+                <li class="list-group-item">
+                    <div class="row p-0 m-0">
+                        <div class="col-2 d-flex justify-content-center">
+                            <img src="{{ url_for('static', filename='files/'+data['pp']) }}" style="height: 100px" class="rounded-pill">
+                        </div>
+                        <div class="col-8 d-flex flex-column justify-content-center">
+                            <p class="fw-bold">{{data['username']}}</p>
+                            <p class="1">{{data['fullname']}}</p>
+                        </div>
+                        <div class="col-2 d-flex align-items-center">
+                            <a href="{{url_for('profile', username = data['username'])}}" class="btn btn-outline-dark w-100">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock body %}

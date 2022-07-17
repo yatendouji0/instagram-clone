@@ -1,0 +1,44 @@
+<div class="card mb-5">
+    <div class="card-header bg-white">
+        <div class="row">
+            <div class="col-1">
+                <img src="{{ url_for('static', filename="files/"+post['whosepp']) }}" style="width:35px; height:35px" class="rounded-pill">
+            </div>
+            <div class="col-11 d-flex align-items-center">
+                <a href="{{url_for('profile',username=post['whose'])}}" class="fw-semibold ms-2 text-decoration-none text-black">{{post['whose']}}</a>
+            </div>
+        </div>
+    </div>
+    <img src="{{ url_for('static', filename="postimg/"+post['postimg']) }}" style="width: 100%; height:auto">
+    <div class="card-body">
+        <div class="d-flex gap-3 mb-2">
+            <a href="#" class="text-black text-decoration-none">
+                <i class="fa-regular fa-heart fa-xl"></i>
+            </a>
+            <a href="{{url_for('postview',id = post['id'])}}" class="text-black">
+                <i class="fa-regular fa-comment fa-xl"></i>
+            </a>
+            <a href="#" class="text-black">
+                <i class="fa-solid fa-share fa-xl"></i>
+            </a>
+        </div>
+        <p class="fs-7 fw-semibold mb-2">
+            0 beğenme
+        </p>
+        {% if post['posttext'] != '' %}
+        <p class="fs-7 mb-1">
+            <a href="{{url_for('profile',username=post['whose'])}}" class="fw-semibold 2 text-decoration-none text-black me-1">{{post['whose']}}</a>
+            {{post['posttext']}}
+        </p>
+        {% endif %}
+        <a href="{{url_for('postview',id = post['id'])}}" class="text-decoration-none text-muted fs-7">Yorumları gör</a>
+    </div>
+    <div class="card-footer bg-white p-0">
+        <form action="">
+            <div class="input-group">
+                <input type="text" name="comment" placeholder="Yorum ekle" class="form-control" style="border: none !important;">
+                <button type="submit" class="btn btn-white fw-bold text-primary" style="border: none !important;">Paylaş</button>
+            </div>
+        </form>
+    </div>
+</div>

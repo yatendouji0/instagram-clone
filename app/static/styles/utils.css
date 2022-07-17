@@ -1,0 +1,76 @@
+
+:root {
+    --color-gray: rgba(255,255,255, 0.1)
+}
+
+.container-960{
+    width: 960px;
+    margin: 0 auto;
+}
+@media (max-width: 960px){
+    .container-960 {
+        width: 100%;
+        padding: 0 1rem;
+    }
+}
+
+.container-900 {
+    width: 900px;
+    margin: 0 auto;
+}
+@media (max-width: 900px) {
+    .container-900 {
+        width: 100%;
+        padding: 0 1rem;
+    }
+}
+
+.container-600{
+    width: 600px;
+    margin: 0 auto;
+}
+@media (max-width: 600px) {
+    .container-600 {
+        width: 100%;
+        padding: 0 1rem;
+    }
+}
+
+.container-350{
+    width: 350px;
+    margin: 0 auto;
+}
+@media (max-width: 350px) {
+    .container-350 {
+        width: 100%;
+        padding: 0 1rem;
+    }
+}
+
+.container-250 {
+    width: 250px;
+    margin: 0 auto;
+}
+@media (max-width: 250px) {
+    .container-250 {
+        width: 100%;
+        padding: 0 1rem;
+    }
+}
+
+.fs-7 {
+    font-size: 0.85rem !important;
+}
+
+.fs-8 {
+    font-size: 0.75rem !important;
+}
+
+*:focus {
+    box-shadow: none !important;
+    border: 1px solid #ced4da !important;
+}
+
+a:focus {
+    border: none !important;
+}

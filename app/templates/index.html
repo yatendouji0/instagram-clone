@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Home &deg; Instagram
+{% endblock title %}
+
+{% block body %}
+    <div class="container-900">
+        <div class="row">
+            <div class="col-12 col-md-7 order-1">
+                {% for post in postdata %}
+                    {% include 'includes/index_post_card.html' %}
+                {% endfor %}
+            </div>
+            <div class="col-12 col-md-5 order-0 order-md-2 mb-3">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-1">
+                                <img src="{{ url_for('static', filename="files/2.jpg") }}" style="width:35px; height:35px" class="rounded-pill">
+                            </div>
+                            <div class="col-11 d-flex align-items-center">
+                                <p class="m-0">
+                                    <a href="{{url_for('profile',username='eren1')}}" class="fw-semibold ms-3 text-decoration-none text-black">eren1</a> • Eren Direk
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-1">
+                                <img src="{{ url_for('static', filename="files/1.jpg") }}" style="width:35px; height:35px" class="rounded-pill">
+                            </div>
+                            <div class="col-11 d-flex align-items-center">
+                                <p class="m-0">
+                                    <a href="{{url_for('profile',username='eren0')}}" class="fw-semibold ms-3 text-decoration-none text-black">eren0</a> • Eren Direk
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-1">
+                                <img src="{{ url_for('static', filename="files/0.png") }}" style="width:35px; height:35px" class="rounded-pill">
+                            </div>
+                            <div class="col-11 d-flex align-items-center">
+                                <p class="m-0">
+                                    <a href="{{url_for('profile',username='berkay1')}}" class="fw-semibold ms-3 text-decoration-none text-black">berkay1</a> • Berkay Direk
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock body %}
