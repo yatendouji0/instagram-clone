@@ -9,7 +9,7 @@ app = Flask(__name__)
 app.secret_key = 'ereninstasecret'
 
 
-db = sqlite3.connect('db.db', check_same_thread=False)
+db = sqlite3.connect(os.getcwd().replace('\\','/')+'/app/db.db', check_same_thread=False)
 db.row_factory = sqlite3.Row
 
 #Tolist
