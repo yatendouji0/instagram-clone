@@ -236,7 +236,7 @@ def postupload():
         postimg = request.files['postimg']
         posttext = request.form['posttext']
         posttext = '' if posttext == None else posttext
-        extensions = ('.png','.jpg','.jpeg')
+        extensions = ('.png','.jpg','.jpeg','.PNG','.JPEG','.JPG','.gif')
         if not postimg.filename.endswith(extensions):
             flash('Bu dosya uzantısı desteklenmiyor.','danger')
             return redirect(url_for('postupload'))
@@ -251,7 +251,7 @@ def postupload():
         cur.close()
         postimg.save(os.getcwd().replace('\\','/') + '/static/postimg/' + postimg.filename)
         flash('Gönderiniz başarıyla yüklendi.','success')
-        return redirect(url_for('profile', username=session['username']))
+        return redirect(url_for('index'))
 
     return render_template('uploadpost.html')
 
