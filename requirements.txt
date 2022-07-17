@@ -1,0 +1,6 @@
+gunicorn
+flask
+sqlite3
+passlib
+functools
+werkzeug
