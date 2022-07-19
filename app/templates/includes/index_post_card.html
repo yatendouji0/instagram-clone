@@ -34,7 +34,7 @@
         <a href="{{url_for('postview',id = post['id'])}}" class="text-decoration-none text-muted fs-7">Yorumları gör</a>
     </div>
     <div class="card-footer bg-white p-0">
-        <form action="">
+        <form action="/posts/{{post['id']}}/addcomment" method='POST'>
             <div class="input-group">
                 <input type="text" name="comment" placeholder="Yorum ekle" class="form-control" style="border: none !important;">
                 <button type="submit" class="btn btn-white fw-bold text-primary" style="border: none !important;">Paylaş</button>
